@@ -20,6 +20,8 @@ Hikari(光) 是我在2017年圣诞节期间的玩具项目,目前已经足够稳
 # macOS快速安装 macOS Quick Installation
 **This is based on top of LLVM6.0 RC3, which is not a final release version.Things might break!**
 **这基于LLVM6.0 RC3而非正式发布版，您可能会遇到一些奇怪的问题**
+**2018/03/02 LLVM6.0最终版已经确定，和下面的RC3版唯一的区别是X86后端的一处Bug修复，我懒得再移植一次了，如果您有需要请按照Wiki的描述手动移植**
+**6.0.0 has been finalized on 2018/03/02, the only major difference between final and RC3 is a bug fix in X86 backend.I didn't bother porting Hikari all over again.If you are concerned about this, port yourself following the Wiki page**
 
 ```
 git clone -b 6.0-rc3 https://github.com/HikariObfuscator/Hikari.git Hikari \
