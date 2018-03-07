@@ -18,9 +18,9 @@ Hikari(光) 是我在2017年圣诞节期间的玩具项目,目前已经足够稳
 ---->
 
 # macOS快速安装 macOS Quick Installation
-**This is based on top of LLVM6.0 RC3, which is not a final release version.Things might break!**  
 **这基于LLVM6.0 RC3而非正式发布版，您可能会遇到一些奇怪的问题**  
 **2018/03/02 LLVM6.0最终版已经确定，和下面的RC3版唯一的区别是X86后端的一处Bug修复，我懒得再移植一次了，如果您有需要请按照Wiki的描述手动移植**  
+**This is based on top of LLVM6.0 RC3, which is not a final release version.Things might break!**  
 **6.0.0 has been finalized on 2018/03/02, the only major difference between final and RC3 is a bug fix in X86 backend.I didn't bother porting Hikari all over again.If you are concerned about this, port Hikari yourself following the Wiki page**
 
 ```
@@ -33,5 +33,5 @@ rm ~/Library/Developer/Toolchains/Hikari.xctoolchain/ToolchainInfo.plist
 ```
 
 # 已知问题Known Issues
-- Running AntiClassDump On A File Without ObjC will crash the executable.在没有ObjC类的源码里打开反class-dump后编译产物会崩溃
-- AntiHook is broken on ARM. ARM下的反Hook会崩溃
+- Running AntiClassDump On A File Without ObjC Class will crash the executable.在没有ObjC类的源码里打开反class-dump后编译产物会崩溃
+- AntiHook is broken in many many ways to an extent beyond fixable. 不要打开AntiHook
