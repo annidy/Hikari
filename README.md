@@ -31,3 +31,7 @@ cmake -G "Ninja" -DCMAKE_BUILD_TYPE=MinSizeRel -DLLVM_APPEND_VC_REV=on -DLLVM_CR
 https://github.com/HikariObfuscator/Resources.git ~/Hikari && rsync -ua \ /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/ \ ~/Library/Developer/Toolchains/Hikari.xctoolchain/ && \
 rm ~/Library/Developer/Toolchains/Hikari.xctoolchain/ToolchainInfo.plist
 ```
+
+# 已知问题Known Issues
+- Running AntiClassDump On A File Without ObjC will crash the executable.在没有ObjC类的源码里打开反class-dump后编译产物会崩溃
+- AntiHook is broken on ARM. ARM下的反Hook会崩溃
