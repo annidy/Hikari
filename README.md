@@ -7,13 +7,11 @@ Hikari(Light in Japanese, name stolen from the Nintendo Switch game [Xenoblade C
 Hikari(即日语中的光,命名来源自NS游戏异度之刃2) 是我在2017年圣诞节期间的玩具项目,目前已经足够稳定可以在生产环境中使用。然而，正如一开始所计划的那样。在LLVM6.0正式Release之后, Hikari将被移植到Release版本并由于显而易见的原因终止支持(时间和精力成本,吸引来的弱智骚扰我的私人联系方式，等等)。你可以在``developer`` 分支上找到开发历史。后续的额外更新包含例如代码完整性校验以及完整的反Hook等功能，这一部分并不开源并且可能会在机会合适的情况下作为商业产品的一部分放出。 如果您私底下认识我，我们或许可以讨论授权模式和价格等问题
 
 # macOS快速安装 macOS Quick Installation
-**这基于LLVM6.0 RC3而非正式发布版，您可能会遇到一些奇怪的问题**  
-**2018/03/02 LLVM6.0最终版已经确定，和下面的RC3版唯一的区别是X86后端的一处Bug修复，我懒得再移植一次了，如果您有需要请按照Wiki的描述手动移植**  
-**This is based on top of LLVM6.0 RC3, which is not a final release version.Things might break!**  
-**6.0.0 has been finalized on 2018/03/02, the only major difference between final and RC3 is a bug fix in X86 backend.I didn't bother porting Hikari all over again.If you are concerned about this, port Hikari yourself following the Wiki page**
+This script assumes current working directory is not the user's home directory(aka ``~/``). ``cd`` to some where else if this is the case.
+这个脚本假设当前工作目录不是用户的家目录(即``~/``) ，如果是的话请先cd到其他目录。
 
 ```
-git clone -b 6.0-rc3 https://github.com/HikariObfuscator/Hikari.git Hikari \
+git clone -b release_60 https://github.com/HikariObfuscator/Hikari.git Hikari \
 && mkdir Build && cd Build && \
 cmake -G "Ninja" -DCMAKE_BUILD_TYPE=MinSizeRel -DLLVM_APPEND_VC_REV=on -DLLVM_CREATE_XCODE_TOOLCHAIN=on \
 -DCMAKE_INSTALL_PREFIX=~/Library/Developer/ ../Hikari && ninja &&ninja install-xcode-toolchain && git clone \
@@ -23,7 +21,6 @@ rm ~/Library/Developer/Toolchains/Hikari.xctoolchain/ToolchainInfo.plist
 
 # 已知问题 Known Issues
 - Running AntiClassDump On A File Without ObjC Class will crash the executable.在没有ObjC类的源码里打开反class-dump后编译产物会崩溃
-- AntiHook is broken in many many ways to an extent beyond fixable. 不要打开AntiHook
 
 # 演示 Demo 
 **这远非完整效果，请下载文档中的Demo自行分析查看**    
