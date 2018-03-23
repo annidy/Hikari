@@ -7,7 +7,7 @@ Hikari(Light in Japanese, name stolen from the Nintendo Switch game [Xenoblade C
 Hikari(即日语中的光,命名来源自NS游戏异度之刃2) 是我在2017年圣诞节期间的玩具项目,目前已经足够稳定可以在生产环境中使用。然而，正如一开始所计划的那样。在LLVM6.0正式Release之后, Hikari将被移植到Release版本并由于显而易见的原因终止支持(时间和精力成本,吸引来的弱智骚扰我的私人联系方式，等等)。你可以在``developer`` 分支上找到开发历史。后续的额外更新包含例如代码完整性校验以及完整的反Hook等功能，这一部分并不开源并且可能会在机会合适的情况下作为商业产品的一部分放出。 如果您私底下认识我，我们或许可以讨论授权模式和价格等问题
 
 # macOS快速安装 macOS Quick Installation
-This script assumes current working directory is not the user's home directory(aka ``~/``). ``cd`` to some where else if this is the case.
+This script assumes current working directory is not the user's home directory(aka ``~/``). ``cd`` to some where else if this is the case.  
 这个脚本假设当前工作目录不是用户的家目录(即``~/``) ，如果是的话请先cd到其他目录。
 
 ```
