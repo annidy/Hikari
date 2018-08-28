@@ -28,6 +28,15 @@ rm ~/Library/Developer/Toolchains/Hikari.xctoolchain/ToolchainInfo.plist
 # 已知问题 Known Issues
 - Running AntiClassDump On A File Without ObjC Class will crash the executable.在没有ObjC类的源码里打开反class-dump后编译产物会崩溃
 
+# 商业版功能 Extra Features in Commercial Version:
+- 虚拟化 | Virtualization (WIP)
+- 全局变量引用混淆 | GlobalVariable Reference Obfuscation
+- 间接跳转目标地址混淆 | Target Jump Address in IndirectBranch Obfuscation
+- 特定架构下花指令 | Anti Disassembler on Certain Archs
+- 常量加密 | Constant Encryption
+- 代码完整性校验 | Code Integrity Protection
+- 以及许多许多的Bug修复 | And many bug fixes
+
 # 演示 Demo
 **这远非完整效果，请下载文档中的Demo自行分析查看**    
 **This only demonstrates a limited part of Hikari's capabilities. Download the complete demo and analyze yourself, link in the documentation**  
