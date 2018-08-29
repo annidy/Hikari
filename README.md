@@ -34,13 +34,13 @@ rm ~/Library/Developer/Toolchains/Hikari.xctoolchain/ToolchainInfo.plist
 - 间接跳转目标地址混淆 | Target Jump Address in IndirectBranch Obfuscation
 - 特定架构下花指令 | Anti Disassembler on Certain Archs
 - 常量加密 | Constant Encryption
-- 代码完整性校验(即反内连Hook,反Patch)(目前只支持iOS) | Code Integrity Protection(aka Anti InlineHook,Anti Patching)(Currently supports iOS only)
+- 代码完整性校验(即反内连Hook,反Patch)(目前只支持iOS/macOS) | Code Integrity Protection(aka Anti InlineHook,Anti Patching)(Currently supports iOS/macOS only)
 - Swift 4.1 | 支持Swift混淆。基于Swift4.1版本
 - 以及许多许多的Bug修复 | And many bug fixes
 
 # 售价及购买模式 | Commercial Pricing Options
 ## 单次购买 | Pay-Per-Usage
-- 1000RMB / 1 usage(Up to 3 architectures of the same code). Discount on bulk purchasing
+- 1000RMB (or equivalent USD)/ 1 usage(Up to 3 architectures of the same code). Discount on bulk purchasing
 - You provide the original bitcode or a buildable source code, specify the obfuscation options to use and get obfuscated binary
 - Any undiscovered potential bugs affecting the obfuscated binary are fixed during obfuscation so you get a workable binary.
 
@@ -50,7 +50,7 @@ rm ~/Library/Developer/Toolchains/Hikari.xctoolchain/ToolchainInfo.plist
 
 ## 订阅制 | Subscription-Based
 - You get the whole toolchain for offline usage. Protected under VMProtect and watermarked
-- 30000RMB / year
+- 30000RMB / year or equivalent USD
 - Regular Updates
 - Bugs are fixed at a "best-effort" basis since under rare circumstances the bug is related to LLVM upstream in which case is difficult to fix personally.
 - Porting to other LLVM/Swift versions is available upon request, however help regarding to intergration with the IDE of your choice is not guaranteed. (Usually easy and could be found using Google)
@@ -65,9 +65,9 @@ rm ~/Library/Developer/Toolchains/Hikari.xctoolchain/ToolchainInfo.plist
 
 ## 定制混淆 | Customized Obfuscation Pass
 - You specify a requirement that is suitable to your organization's need.
-- I will evaluate if the requirement if possible and how much it will cost you.
+- I will evaluate if the requirement is possible and how much it will cost you.
 - You get the full source of the obfuscation pass as well as following updates.
-- This pass is exclusive to your copy is not provided to anyone else.
+- This pass is exclusive to your copy and is not provided to anyone else.
 
 - 你按照企业需求提出定制的混淆Pass
 - 我在分析需求后决定是否制作以及定制价格
