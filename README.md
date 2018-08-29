@@ -34,7 +34,8 @@ rm ~/Library/Developer/Toolchains/Hikari.xctoolchain/ToolchainInfo.plist
 - 间接跳转目标地址混淆 | Target Jump Address in IndirectBranch Obfuscation
 - 特定架构下花指令 | Anti Disassembler on Certain Archs
 - 常量加密 | Constant Encryption
-- 代码完整性校验 | Code Integrity Protection
+- 代码完整性校验(即反内连Hook,反Patch)(目前只支持iOS) | Code Integrity Protection(aka Anti InlineHook,Anti Patching)(Currently supports iOS only)
+- Swift 4.1 | 支持Swift混淆。基于Swift4.1版本
 - 以及许多许多的Bug修复 | And many bug fixes
 
 # 演示 Demo
