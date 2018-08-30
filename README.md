@@ -39,6 +39,7 @@ rm ~/Library/Developer/Toolchains/Hikari.xctoolchain/ToolchainInfo.plist
 - 以及许多许多的Bug修复 | And many bug fixes
 
 # 售价及购买模式 | Commercial Pricing Options
+可议价 | The pricing here is more like a placeholder and I'm open to discussions
 ## 单次购买 | Pay-Per-Usage
 - 1000RMB (or equivalent USD)/ 1 usage(Up to 3 architectures of the same code). Discount on bulk purchasing
 - You provide the original bitcode or a buildable source code, specify the obfuscation options to use and get obfuscated binary
