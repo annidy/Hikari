@@ -38,44 +38,6 @@ rm ~/Library/Developer/Toolchains/Hikari.xctoolchain/ToolchainInfo.plist
 - Swift 4.1 | 支持Swift混淆。基于Swift4.1版本
 - 以及许多许多的Bug修复 | And many bug fixes
 
-# 售价及购买模式 | Commercial Pricing Options
-可议价 | The pricing here is more like a placeholder and I'm open to discussions
-## 单次购买 | Pay-Per-Usage
-- 1000RMB (or equivalent USD)/ 1 usage(Up to 3 architectures of the same code). Discount on bulk purchasing
-- You provide the original bitcode or a buildable source code, specify the obfuscation options to use and get obfuscated binary
-- Any undiscovered potential bugs affecting the obfuscated binary are fixed during obfuscation so you get a workable binary.
-
-- 单次收费1000元，每次最多可支持同一份代码的最多三种架构。一次性购买多份有折扣。
-- 你需要提供原始Bitcode或者是可编译工程。指明混淆选项，得到混淆后二进制
-- 任何未发现的导致混淆后二进制不可用的Bug将在混淆过程中被修复
-
-## 订阅制 | Subscription-Based
-- You get the whole toolchain for offline usage. Protected under VMProtect and watermarked
-- 30000RMB / year or equivalent USD
-- Regular Updates
-- Bugs are fixed at a "best-effort" basis since under rare circumstances the bug is related to LLVM upstream in which case is difficult to fix personally.
-- Porting to other LLVM/Swift versions is available upon request, however help regarding to intergration with the IDE of your choice is not guaranteed. (Usually easy and could be found using Google)
-
-
-- 你获得完整的离线工具链。使用VMProtect加壳并有水印
-- 30000RMB / 年
-- 定期更新
-- 尽最大努力进行Bug修复，这是由于在极少数情况下Bug来自LLVM上流而非混淆，故需提交Bug至上流以待修复
-- 提供其他LLVM/Swift版本的移植，但与IDE等开发环境的集成教程恕不保证提供。(大多数时候都可以在Google上找到且并不耗时)
-
-
-## 定制混淆 | Customized Obfuscation Pass
-- You specify a requirement that is suitable to your organization's need.
-- I will evaluate if the requirement is possible and how much it will cost you.
-- You get the full source of the obfuscation pass as well as following updates.
-- This pass is exclusive to your copy and is not provided to anyone else.
-
-- 你按照企业需求提出定制的混淆Pass
-- 我在分析需求后决定是否制作以及定制价格
-- 你获得Pass的完整源码以及后续更新服务
-- 这个Pass由你或你的组织独享，不在其他任何副本中提供
-
-
 # 演示 Demo
 **这远非完整效果，请下载文档中的Demo自行分析查看**    
 **This only demonstrates a limited part of Hikari's capabilities. Download the complete demo and analyze yourself, link in the documentation**  
