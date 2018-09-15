@@ -35,7 +35,9 @@ rm ~/Library/Developer/Toolchains/Hikari.xctoolchain/ToolchainInfo.plist
 - 特定架构下花指令 | Anti Disassembler on Certain Archs
 - 常量加密 | Constant Encryption
 - 代码完整性校验(即反内连Hook,反Patch)(目前只支持iOS/macOS) | Code Integrity Protection(aka Anti InlineHook,Anti Patching)(Currently supports iOS/macOS only)
-- Swift 4.1 | 支持Swift混淆。基于Swift4.1版本
+- 支持Swift混淆。基于Swift4.1版本 | Swift 4.1
+- 控制流平坦化支持所有的Terminator,或者用人话说允许控制流平坦化在任何函数上运行 | Support all terminators in Flattening, open-source version simply skips the whole function if it contains unsupported instruction
+- C++ RTTI混淆 | C++ RTTI Obfuscation (WIP)
 - 以及许多许多的Bug修复 | And many bug fixes
 
 # 演示 Demo
