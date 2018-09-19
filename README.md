@@ -17,7 +17,7 @@ This script assumes current working directory is not the user's home directory(a
 这个脚本假设当前工作目录不是用户的家目录(即``~/``) ，如果是的话请先cd到其他目录。这个脚本也假设您的macOS中有安装cmake和ninja，如果没有的话请使用[Homebrew](https://brew.sh)之类的包管理工具先行安装
 
 ```
-git clone -b release_60 https://github.com/HikariObfuscator/Hikari.git Hikari \
+git clone -b release_70 https://github.com/HikariObfuscator/Hikari.git Hikari \
 && mkdir Build && cd Build && \
 cmake -G "Ninja" -DCMAKE_BUILD_TYPE=MinSizeRel -DLLVM_APPEND_VC_REV=on -DLLVM_CREATE_XCODE_TOOLCHAIN=on \
 -DCMAKE_INSTALL_PREFIX=~/Library/Developer/ ../Hikari && ninja &&ninja install-xcode-toolchain && git clone \
