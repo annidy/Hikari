@@ -19,6 +19,23 @@ https://github.com/HikariObfuscator/Resources.git ~/Hikari && rsync -a --ignore-
 rm ~/Library/Developer/Toolchains/Hikari.xctoolchain/ToolchainInfo.plist
 ```
 
+# Building on Unix
+Most parts are the same, you just remove all the commands related to Xcode
+
+```
+git clone -b release_70 https://github.com/HikariObfuscator/Hikari.git Hikari \
+&& mkdir Build && cd Build && \
+cmake -G "Ninja" -DCMAKE_BUILD_TYPE=MinSizeRel -DLLVM_APPEND_VC_REV=on -DLLVM_CREATE_XCODE_TOOLCHAIN=on \
+-DCMAKE_INSTALL_PREFIX=~/Library/Developer/ ../Hikari && ninja && ninja install && git clone \
+https://github.com/HikariObfuscator/Resources.git ~/Hikari
+```
+
+# Building on Windows
+You can either use a UNIX-Like environment like MinGW / Cygwin, or just edit ``lib/Transforms/Obfuscation/FunctionCallObfuscate.cpp`` ,remove ``#include <dlfcn.h>`` and then clean up all function bodies in this file, and add ``return false`` if required. Since that thingy isn't supported on Windows anyway.
+
+~~Or, you know, try switch to another OS that isn't developed by retards instead of using some expensive and buggy OS that nobody really cares about.~~
+
+
 # Known Issues
 - Running AntiClassDump On A File Without ObjC Class will crash the executable.
 
