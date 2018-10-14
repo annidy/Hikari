@@ -31,9 +31,11 @@ https://github.com/HikariObfuscator/Resources.git ~/Hikari
 ```
 
 # Building on Windows
-You can either use a UNIX-Like environment like MinGW / Cygwin, or just edit ``lib/Transforms/Obfuscation/FunctionCallObfuscate.cpp`` ,remove ``#include <dlfcn.h>`` and then clean up all function bodies in this file, and add ``return false`` if required. Since that thingy isn't supported on Windows anyway.
+You can either use a UNIX-Like environment like MinGW / Cygwin (Based upon community feedback. I personally have zero success building LLVM on Windows, even with official LLVM release tarballs. And let's be honest, you can get a more curable cancer by walking through a nuclear mushroom cloud than developing on Windows), or just edit ``lib/Transforms/Obfuscation/FunctionCallObfuscate.cpp`` ,remove ``#include <dlfcn.h>`` and then clean up all function bodies in this file, add ``return false`` if required. Since that thing isn't supported on Windows anyway and I have no plan to adding support for Windows to that Obfuscation Pass.
 
 ~~Or, you know, try switch to another OS that isn't developed by retards instead of using some expensive and buggy OS that nobody really cares about.~~
+
+Plus, even if you managed to get things working, there is a chance that the LLVM Frontend Clang won't accept your code (Google ``MSVC nonstandard behavior``), so if you are using some non-standard compatible code, you might as well fall back to alternative solutions on Windows
 
 
 # Known Issues
