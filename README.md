@@ -25,8 +25,8 @@ Most parts are the same, you just remove all the commands related to Xcode
 ```
 git clone -b release_70 https://github.com/HikariObfuscator/Hikari.git Hikari \
 && mkdir Build && cd Build && \
-cmake -G "Ninja" -DCMAKE_BUILD_TYPE=MinSizeRel -DLLVM_APPEND_VC_REV=on -DLLVM_CREATE_XCODE_TOOLCHAIN=on \
--DCMAKE_INSTALL_PREFIX=~/Library/Developer/ ../Hikari && ninja && ninja install && git clone \
+cmake -G "Ninja" -DCMAKE_BUILD_TYPE=MinSizeRel -DLLVM_APPEND_VC_REV=on \
+../Hikari && ninja && ninja install && git clone \
 https://github.com/HikariObfuscator/Resources.git ~/Hikari
 ```
 
