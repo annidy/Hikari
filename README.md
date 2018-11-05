@@ -13,7 +13,7 @@ This script assumes current working directory is not the user's home directory(a
 ```
 git clone -b release_70 https://github.com/HikariObfuscator/Hikari.git Hikari \
 && mkdir Build && cd Build && \
-cmake -G "Ninja" -DCMAKE_BUILD_TYPE=MinSizeRel -DLLVM_APPEND_VC_REV=on -DLLVM_CREATE_XCODE_TOOLCHAIN=on \
+cmake -G "Ninja" -DLLDB_CODESIGN_IDENTITY='' -DCMAKE_BUILD_TYPE=MinSizeRel -DLLVM_APPEND_VC_REV=on -DLLVM_CREATE_XCODE_TOOLCHAIN=on \
 -DCMAKE_INSTALL_PREFIX=~/Library/Developer/ ../Hikari && ninja &&ninja install-xcode-toolchain && git clone \
 https://github.com/HikariObfuscator/Resources.git ~/Hikari && rsync -a --ignore-existing \ /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/ \ ~/Library/Developer/Toolchains/Hikari.xctoolchain/ && \
 rm ~/Library/Developer/Toolchains/Hikari.xctoolchain/ToolchainInfo.plist
