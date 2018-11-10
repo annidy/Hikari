@@ -41,7 +41,9 @@
 #include "llvm/Transforms/Scalar/InstSimplifyPass.h"
 #include "llvm/Transforms/Scalar/SimpleLoopUnswitch.h"
 #include "llvm/Transforms/Utils.h"
+#include "llvm/Transforms/Utils/SymbolRewriter.h"
 #include "llvm/Transforms/Vectorize.h"
+#include "llvm/Transforms/MyPass/MyPass.h"
 #include "llvm/Transforms/Obfuscation/Obfuscation.h"
 
 using namespace llvm;
@@ -152,6 +154,14 @@ static cl::opt<bool> EnableSimpleLoopUnswitch(
 static cl::opt<bool> EnableGVNSink(
     "enable-gvn-sink", cl::init(false), cl::Hidden,
     cl::desc("Enable the GVN sinking pass (default = off)"));
+
+static cl::opt<std::string> RewriteMapFiles(
+    "my-rewrite-symbols", cl::init(""), cl::Hidden, cl::value_desc("filename"),
+    cl::desc("Symbol Rewrite Map"));
+
+static cl::opt<bool> EnableMyPass(
+    "mypass", cl::init(false), cl::Hidden,
+    cl::desc("mypass test"));
 
 PassManagerBuilder::PassManagerBuilder() {
     OptLevel = 2;
@@ -692,6 +702,10 @@ void PassManagerBuilder::populateModulePassManager(
     // outer loop. LICM pass can help to promote the runtime check out if the
     // checked value is loop invariant.
     MPM.add(createLICMPass());
+
+    MPM.add(createRewriteSymbolsPass(RewriteMapFiles));
+
+    MPM.add(createSimplePass(EnableMyPass));
  }
 
   // After vectorization and unrolling, assume intrinsics may tell us more

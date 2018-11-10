@@ -524,6 +524,7 @@ public:
 
   RewriteSymbolsLegacyPass();
   RewriteSymbolsLegacyPass(SymbolRewriter::RewriteDescriptorList &DL);
+  RewriteSymbolsLegacyPass(std::string MapFile);
 
   bool runOnModule(Module &M) override;
 
@@ -542,6 +543,8 @@ RewriteSymbolsLegacyPass::RewriteSymbolsLegacyPass() : ModulePass(ID) {
 RewriteSymbolsLegacyPass::RewriteSymbolsLegacyPass(
     SymbolRewriter::RewriteDescriptorList &DL)
     : ModulePass(ID), Impl(DL) {}
+
+RewriteSymbolsLegacyPass::RewriteSymbolsLegacyPass(std::string MapFile) : ModulePass(ID), Impl(MapFile) {}
 
 bool RewriteSymbolsLegacyPass::runOnModule(Module &M) {
   return Impl.runImpl(M);
@@ -572,6 +575,12 @@ void RewriteSymbolPass::loadAndParseMapFiles() {
     Parser.parse(MapFile, &Descriptors);
 }
 
+void RewriteSymbolPass::loadAndParseMapFiles(std::string MapFile) {
+  SymbolRewriter::RewriteMapParser Parser;
+
+  Parser.parse(MapFile, &Descriptors);
+}
+
 INITIALIZE_PASS(RewriteSymbolsLegacyPass, "rewrite-symbols", "Rewrite Symbols",
                 false, false)
 
@@ -582,4 +591,8 @@ ModulePass *llvm::createRewriteSymbolsPass() {
 ModulePass *
 llvm::createRewriteSymbolsPass(SymbolRewriter::RewriteDescriptorList &DL) {
   return new RewriteSymbolsLegacyPass(DL);
+}
+
+ModulePass *llvm::createRewriteSymbolsPass(std::string MapFile) {
+  return new RewriteSymbolsLegacyPass(MapFile);
 }

@@ -1,6 +1,6 @@
 function: {
-  source: source_function,
-  target: target_function,
+  source: add,
+  target: min,
 }
 
 global variable: {

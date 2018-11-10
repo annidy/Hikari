@@ -40,6 +40,14 @@ namespace {
 char Hello::ID = 0;
 static RegisterPass<Hello> X("hello", "Hello World Pass");
 
+#include "llvm/IR/LegacyPassManager.h"
+#include "llvm/Transforms/IPO/PassManagerBuilder.h"
+static void registerHelloPass(const PassManagerBuilder&, legacy::PassManagerBase &PM){
+  PM.add(new Hello());
+}
+static RegisterStandardPasses RegisterMyPass(PassManagerBuilder::EP_EarlyAsPossible,
+registerHelloPass);
+
 namespace {
   // Hello2 - The second implementation with getAnalysisUsage implemented.
   struct Hello2 : public FunctionPass {

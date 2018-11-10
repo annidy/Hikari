@@ -117,10 +117,13 @@ private:
 
 ModulePass *createRewriteSymbolsPass();
 ModulePass *createRewriteSymbolsPass(SymbolRewriter::RewriteDescriptorList &);
+ModulePass *createRewriteSymbolsPass(std::string MapFile);
 
 class RewriteSymbolPass : public PassInfoMixin<RewriteSymbolPass> {
 public:
   RewriteSymbolPass() { loadAndParseMapFiles(); }
+
+  RewriteSymbolPass(std::string MapFile) { loadAndParseMapFiles(MapFile); }
 
   RewriteSymbolPass(SymbolRewriter::RewriteDescriptorList &DL) {
     Descriptors.splice(Descriptors.begin(), DL);
@@ -133,6 +136,8 @@ public:
 
 private:
   void loadAndParseMapFiles();
+
+  void loadAndParseMapFiles(std::string MapFile);
 
   SymbolRewriter::RewriteDescriptorList Descriptors;
 };
